@@ -4,16 +4,16 @@
 // length of password has to be atlest 8chrts and no more the n128 chrts
 // password sneeds to include lowercase uppercase numeric and or special characters.
 
-// var uppercase = [A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P].split(',')
-// var lowercase = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p].split(',')
-// var specChar = 
-// var numbers =
+// var uppercase = ['A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'].split(',')
+// var lowercase = ['a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'].split(',')
+// var specChar = ['!,@,#,$,%,^,&,*,?,-,].split(',')
+// var numbers =['0,1,2,3,4,5,6,7,8,9'].split(',')
 
 
 function password() {
 
 
-var length = parseInt (prompt('how many characters would you like you password to be')
+var length = parseInt (prompt('How many characters in length would you like you password to be')
 );
 console.log(length)
 
@@ -25,11 +25,11 @@ return null ;
 }
 
 if(length < 8) {
-  alert('pass length has to be 8 or more');
+  alert('Your password length must be 8 or more charqacters');
   return null;
 }
 if(length > 128) {
-  alert('pass length must be less than 128');
+  alert('Your password length must be less than 128 characters');
   return null;
 }
 var haslowercase = confirm('Would you like to include lower case letters.');
@@ -45,24 +45,72 @@ hasuppercase === false &&
 hasnumeric === false &&
 hasspecailcharacters === false
 ){
-alert('Must choose 1 of the 3')
+alert('Must choose one of the 4 character types.')
 return null;
 }
 
-var passwordOptions ={
-length: length,
-haslowercase: haslowercase,
-hasuppercase: hasuppercase,
-hasspecailcharacters: hasspecailcharacters,
+var optionse ={
+lengthderiserd: length,
+wantslowercase: haslowercase,
+wantsuppercase: hasuppercase,
+wantsspecailcharacters: hasspecailcharacters,
 
 
 
 }
+return optionse
 
-console.log(passwordOptions)
-return passwordOptions
+console.log(optionse)
+
 
 }
+//function for randomizing elements from an array
+function randimzearray(arr){
+//creata a variable to stoe the rnadom-length
+var random = Math.floor(Math.random() * arr.length); //picking randon
+//creata a varible to store array 
+ var randomchar = arr[random]         // s
+// write a function to actually genertae th passwo4rd//
+
+return randomchar
+
+}
+function genpass(){
+
+  var useropt = optionse();
+
+  //varivalt to storwe pass as its being created
+
+  var result = []
+// create an array to store th types of characters to include in the password
+
+//creat an arrqay to store guarented characters
+
+// check if options exist if not exit the function//
+if (!useropt) return null;
+
+// conditional statements that ass array of lowercase characters into array of poosible characters based on the users input
+if (useropt.haslowercase){
+  /possibelchar = possibelchar.concat(lowercase);
+  // pushing random poss charaters to the guranted characguarntedchar.push(random)
+
+
+// creatz a for other options
+
+
+
+// creata a for loop mmix in guarentedd results //
+
+  // make a function that randomizes my characters
+
+
+
+
+  return results.join('')
+}
+
+}
+//vreats a var
 
 password()
 
