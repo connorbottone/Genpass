@@ -77,6 +77,8 @@ function genPass() {
 
   var userOpt = password();
 
+  if (!userOpt) return null;
+
 
 
   var result = []
@@ -116,7 +118,7 @@ function genPass() {
     result[i] = guarantedChar[i]
   }
   console.log(result)
-  return result
+  return result.join('')
 }
 
 
@@ -127,8 +129,7 @@ var generateBtn = document.querySelector("#generate");
 
 function writePassword() {
   var password = genPass();
-  password = password.join("")
-
+ // password = password.join("")
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
