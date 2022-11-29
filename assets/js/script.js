@@ -1,35 +1,35 @@
 
 var uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-var specChar = ['!', '@', '#', '$', '%', '^', '&', '*', '?', '-',]
+var specChar = ['~', '`', '!', '@', '#', '$', '%', '^','&','*','(',')','-','_','=','+','}','{',']','[','|',';',':','"','<','>',',','.','?']
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
 function password() {
 
 
-  var length = window.prompt('How many characters in length would you like you password to be')
+  var length = window.prompt('How many characters in length would you like you password to be?')
   console.log(length)
 
   if (isNaN(length)) {
 
-    alert('Password must be a numeric number');
+    alert('Password length must be entered as  number!');
     return null;
 
   }
 
   if (length < 8) {
-    alert('Your password length must be 8 or more charqacters');
+    alert('Your password length must be 8 or more characters.');
     return null;
   }
   if (length > 128) {
-    alert('Your password length must be less than 128 characters');
+    alert('Your password length must be less than 128 characters.');
     return null;
   }
   var haslowercase = window.confirm('Do you want your password to contain lowercase letters?');
   var hasuppercase = window.confirm('Do you want your password to contain uppercase letters?');
   var hasnumeric = window.confirm('Would you like to include numbers in your password?');
-  var hasspecailcharacters = window.confirm('Do you want your password to contian speacail characters?');
+  var hasspecailcharacters = window.confirm('Do you want your password to contian special characters?');
 
 
 
@@ -39,7 +39,7 @@ function password() {
     hasnumeric === false &&
     hasspecailcharacters === false
   ) {
-    alert('Must choose one of the 4 character types.')
+    alert('You must include one of the four character types within your password!\n.Lowercase letters\n.Uppercase letters\n.Numbers\n.Special characters')
     return null;
   }
 
@@ -115,6 +115,7 @@ function genPass() {
   for (let i = 0; i < guarantedChar.length; i++) {
     result[i] = guarantedChar[i]
   }
+ console.log(result)
   return result
 }
 
@@ -134,5 +135,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
