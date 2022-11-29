@@ -1,7 +1,7 @@
 
 var uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-var specChar = ['~', '`', '!', '@', '#', '$', '%', '^','&','*','(',')','-','_','=','+','}','{',']','[','|',';',':','"','<','>',',','.','?']
+var specChar = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '}', '{', ']', '[', '|', ';', ':', '"', '<', '>', ',', '.', '?']
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
@@ -28,7 +28,7 @@ function password() {
   }
   var haslowercase = window.confirm('Do you want your password to contain lowercase letters?');
   var hasuppercase = window.confirm('Do you want your password to contain uppercase letters?');
-  var hasnumeric = window.confirm('Would you like to include numbers in your password?');
+  var hasnumeric = window.confirm('Do you want your password to contain numbers?');
   var hasspecailcharacters = window.confirm('Do you want your password to contian special characters?');
 
 
@@ -45,7 +45,7 @@ function password() {
 
   var optionse = {
     lengthderiserd: length,
-    wantslowercase: haslowercase,
+    wantsLowercase: haslowercase,
     wantsuppercase: hasuppercase,
     wantsspecailcharacters: hasspecailcharacters,
     wantsnum: hasnumeric
@@ -56,15 +56,15 @@ function password() {
   console.log(optionse);
   return optionse;
 
-  
+
 
 
 }
 
 function randomizeArray(arr) {
-  
-  var random = Math.floor(Math.random() * arr.length); 
-  var randomchrt = arr[random]         
+
+  var random = Math.floor(Math.random() * arr.length);
+  var randomchrt = arr[random]
 
   return randomchrt
 
@@ -77,21 +77,21 @@ function genPass() {
 
   var userOpt = password();
 
-  
+
 
   var result = []
-  
+
 
   var possibleChar = [];
 
-  
+
   var guarantedChar = [];
 
 
 
 
-  
-  if (userOpt.wantslowercase) {
+
+  if (userOpt.wantsLowercase) {
     possibleChar = possibleChar.concat(lowercase);
     guarantedChar.push(randomizeArray(lowercase))
   }
@@ -115,7 +115,7 @@ function genPass() {
   for (let i = 0; i < guarantedChar.length; i++) {
     result[i] = guarantedChar[i]
   }
- console.log(result)
+  console.log(result)
   return result
 }
 

@@ -1,5 +1,5 @@
 ## Description
-- [Final page]
+- [Deployed page]
  
  
 -This webpage can generate a random password made to the user criteria.
@@ -18,7 +18,7 @@
  
  
  
-- [Installation](#installation)
+- [Description](#description)
 - [Usage](#usage)
 - [Credits](#credits)
 - [Author](#author)
